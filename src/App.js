@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import {
-	CanvasContextProvider,
-	CanvasContext
-} from "./components/context/CanvasContext";
+import { CanvasContextProvider } from "./components/context/CanvasContext";
+import Control from "./components/Control/";
+import CanvasCreator from "./components/CanvasCreator";
 class App extends Component {
 	render() {
 		return (
 			<div className="App">
 				<CanvasContextProvider>
-					<CanvasContext.Consumer>
-						{({ name }) => name}
-					</CanvasContext.Consumer>
+					<div className="container">
+						<Control />
+						<CanvasCreator />
+					</div>
 				</CanvasContextProvider>
 			</div>
 		);
