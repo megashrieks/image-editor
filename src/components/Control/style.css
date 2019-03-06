@@ -4,3 +4,23 @@
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 	text-align: center;
 }
+.list {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+.list:hover {
+	background: #efefef;
+}
+.file-upload {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	display: block;
+	position: relative;
+}
+.file-upload input[type="file"] {
+	display: none;
+}
