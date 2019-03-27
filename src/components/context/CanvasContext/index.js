@@ -4,7 +4,14 @@ export class CanvasContextProvider extends Component {
 	canvas = null;
 	context2d = null;
 	context3d = null;
-
+	currentImage = null;
+	state = {
+		cursor: {
+			x: window.innerWidth / 2,
+			y: window.innerHeight / 2
+		},
+		size: 150
+	};
 	getDimensions = () => {
 		if (!this.canvas)
 			return {
@@ -30,11 +37,16 @@ export class CanvasContextProvider extends Component {
 		};
 	};
 	setCanvas = canvas => {
-		console.log(canvas);
 		canvas.width = window.innerWidth - 50;
 		canvas.height = window.innerHeight;
 		this.canvas = canvas;
 		this.context2d = canvas.getContext("2d");
+		this.currentImage = this.context2d.getImageData(
+			0,
+			0,
+			this.canvas.width,
+			this.canvas.height
+		);
 	};
 
 	createImageObject = dataURI => {
@@ -57,6 +69,30 @@ export class CanvasContextProvider extends Component {
 			this.canvas.width,
 			this.canvas.height
 		);
+		this.currentImage = this.context2d.getImageData(
+			0,
+			0,
+			this.canvas.width,
+			this.canvas.height
+		);
+	};
+	setCursor = cursor => {
+		this.setState({ cursor });
+	};
+	getCursor = () => {
+		return {
+			cursor: {
+				x:
+					this.state.cursor.x -
+					this.canvas.offsetLeft -
+					this.state.size / 2,
+				y:
+					this.state.cursor.y +
+					this.canvas.offsetTop -
+					this.state.size / 2
+			},
+			size: this.state.size
+		};
 	};
 	render() {
 		return (
@@ -65,7 +101,11 @@ export class CanvasContextProvider extends Component {
 					getDimensions: this.getDimensions,
 					getContext2d: this.getContext2d,
 					setImage: this.setImage,
-					setCanvas: this.setCanvas
+					setCanvas: this.setCanvas,
+					cursor: this.state.cursor,
+					cursor_size: this.state.size,
+					setCursor: this.setCursor,
+					getCursor: this.getCursor
 				}}
 			>
 				{this.props.children}

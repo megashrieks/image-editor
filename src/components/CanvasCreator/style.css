@@ -7,3 +7,9 @@
 	height: 100%;
 	display: block;
 }
+.cursor {
+	position: fixed;
+	z-index: 2;
+	border: 1px solid rgb(0, 0, 255);
+	background: rgba(35, 171, 196, 0.3);
+}
