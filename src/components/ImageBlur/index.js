@@ -6,8 +6,8 @@ export default class ImageBlur extends Component {
 		let { context: ctx } = this.context.getContext2d();
 		let {
 			cursor: { x, y },
-			cursor_size: size
-		} = this.context;
+			size
+		} = this.context.getCursor();
 		console.log(x - size / 2, y - size / 2);
 		let imageData = ctx.getImageData(
 			x - size / 2,

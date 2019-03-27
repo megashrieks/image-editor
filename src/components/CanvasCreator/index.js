@@ -9,26 +9,31 @@ export default class CanvasCreator extends Component {
 	}
 	componentDidMount() {
 		this.context.setCanvas(this.canvasRef.current);
+		this.changeCursor({
+			pageX: window.innerWidth / 2,
+			pageY: window.innerHeight / 2
+		});
 	}
 	changeCursor = ({ pageX, pageY }) => {
 		this.context.setCursor({
-			x: pageX - this.canvasRef.current.offsetLeft,
-			y: pageY - this.canvasRef.current.offsetTop
+			x: pageX,
+			y: pageY
 		});
 	};
 	render() {
 		let { cursor, cursor_size: size } = this.context;
-		let left = this.canvasRef.current
-			? this.canvasRef.current.offsetLeft
-			: 0;
-		let top = this.canvasRef.current ? this.canvasRef.current.offsetTop : 0;
+		// let left = this.canvasRef.current
+		// 	? this.canvasRef.current.offsetLeft
+		// 	: 0;
+		// let top = this.canvasRef.current ? this.canvasRef.current.offsetTop : 0;
+		// console.log(cursor.x - size / 2, cursor.x, left);
 		return (
 			<div className="canvas-container">
 				<div
 					className="cursor"
 					style={{
-						top: cursor.y + top - size / 2 + "px",
-						left: cursor.x + left - size / 2 + "px",
+						top: cursor.y - size / 2 + "px",
+						left: cursor.x - size / 2 + "px",
 						width: size + "px",
 						height: size + "px"
 					}}

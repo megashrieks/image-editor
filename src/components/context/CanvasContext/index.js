@@ -82,14 +82,8 @@ export class CanvasContextProvider extends Component {
 	getCursor = () => {
 		return {
 			cursor: {
-				x:
-					this.state.cursor.x -
-					this.canvas.offsetLeft -
-					this.state.size / 2,
-				y:
-					this.state.cursor.y +
-					this.canvas.offsetTop -
-					this.state.size / 2
+				x: this.state.cursor.x - this.canvas.offsetLeft,
+				y: this.state.cursor.y + this.canvas.offsetTop
 			},
 			size: this.state.size
 		};
