@@ -10,7 +10,7 @@ export class CanvasContextProvider extends Component {
 			x: window.innerWidth / 2,
 			y: window.innerHeight / 2
 		},
-		size: 150
+		size: 350
 	};
 	getDimensions = () => {
 		if (!this.canvas)
@@ -88,6 +88,9 @@ export class CanvasContextProvider extends Component {
 			size: this.state.size
 		};
 	};
+	getOriginalImage = () => {
+		return this.currentImage;
+	}
 	render() {
 		return (
 			<CanvasContext.Provider
@@ -95,6 +98,7 @@ export class CanvasContextProvider extends Component {
 					getDimensions: this.getDimensions,
 					getContext2d: this.getContext2d,
 					setImage: this.setImage,
+					getOriginalImage: this.getOriginalImage,
 					setCanvas: this.setCanvas,
 					cursor: this.state.cursor,
 					cursor_size: this.state.size,
