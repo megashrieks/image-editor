@@ -4,6 +4,7 @@ import ImageUpload from "../ImageUpload/";
 import ImageReset from "../ImageReset";
 import ImageNegate from "../ImageNegate";
 import ImageBlur from "../ImageBlur";
+import GaussianBlur from "../GaussianBlur";
 import SobelFilter from "../SobelFilter";
 import PerwittFilter from "../PerwitttFilter";
 
@@ -14,6 +15,7 @@ export default class Control extends Component {
 			<ImageReset />,
 			<ImageNegate />,
 			<ImageBlur />,
+			<GaussianBlur />,
 			<SobelFilter />,
 			<PerwittFilter />
 		];

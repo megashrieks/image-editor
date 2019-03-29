@@ -33,8 +33,8 @@ export default class ImageBlur extends Component {
             for(let col = 0; col < size; ++col){
                 i = this.getPixelPos(col, row, size);
                 r = g = b = 0;
-                for(let kr = row - halfKLen, m = 0; kr <= (row + halfKLen); ++kr, ++m){
-                    for(let kc = col - halfKLen, n = 0; kc <= (col + halfKLen); ++kc, ++n){
+                for(let kr = row - halfKLen; kr <= (row + halfKLen); ++kr){
+                    for(let kc = col - halfKLen; kc <= (col + halfKLen); ++kc){
 						tempRow = kr;
 						tempCol = kc;
 						if(tempRow < 0)
