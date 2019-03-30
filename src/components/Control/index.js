@@ -3,8 +3,9 @@ import "./style.css";
 import ImageUpload from "../ImageUpload/";
 import ImageReset from "../ImageReset";
 import ImageNegate from "../ImageNegate";
-import ImageBlur from "../ImageBlur";
-import GaussianBlur from "../GaussianBlur";
+import ImageBlur from "../ImageConvolution/ImageBlur/BoxBlur";
+import GaussianBlur from "../ImageConvolution/ImageBlur/GaussianBlur";
+import LaplacianFilter from "../ImageConvolution/LaplacianFilter";
 import SobelFilter from "../SobelFilter";
 import PerwittFilter from "../PerwitttFilter";
 
@@ -16,6 +17,7 @@ export default class Control extends Component {
 			<ImageNegate />,
 			<ImageBlur />,
 			<GaussianBlur />,
+			<LaplacianFilter />,
 			<SobelFilter />,
 			<PerwittFilter />
 		];
