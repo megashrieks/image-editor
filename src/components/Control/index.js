@@ -9,6 +9,7 @@ import LaplacianFilter from "../ImageConvolution/LaplacianFilter";
 import SobelFilter from "../SobelFilter";
 import PerwittFilter from "../PerwitttFilter";
 import Brightness from "../Brightness";
+import Contrast from "../Contrast";
 import HistogramEqualization from "../HistogramEqualization";
 
 export default class Control extends Component {
@@ -23,6 +24,7 @@ export default class Control extends Component {
 			<SobelFilter />,
 			<PerwittFilter />,
 			<Brightness />,
+			<Contrast />,
 			<HistogramEqualization />
 		];
 		return (
