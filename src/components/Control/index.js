@@ -8,12 +8,13 @@ import GaussianBlur from "../ImageConvolution/ImageBlur/GaussianBlur";
 import LaplacianFilter from "../ImageConvolution/LaplacianFilter";
 import SobelFilter from "../SobelFilter";
 import PerwittFilter from "../PerwitttFilter";
+import Brightness from "../Brightness";
 import HistogramEqualization from "../HistogramEqualization";
 
 export default class Control extends Component {
 	render() {
 		let list = [
-			<ImageUpload />, 
+			<ImageUpload />,
 			<ImageReset />,
 			<ImageNegate />,
 			<ImageBlur />,
@@ -21,6 +22,7 @@ export default class Control extends Component {
 			<LaplacianFilter />,
 			<SobelFilter />,
 			<PerwittFilter />,
+			<Brightness />,
 			<HistogramEqualization />
 		];
 		return (
