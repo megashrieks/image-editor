@@ -8,6 +8,7 @@ import GaussianBlur from "../ImageConvolution/ImageBlur/GaussianBlur";
 import LaplacianFilter from "../ImageConvolution/LaplacianFilter";
 import SobelFilter from "../SobelFilter";
 import PerwittFilter from "../PerwitttFilter";
+import HistogramEqualization from "../HistogramEqualization";
 
 export default class Control extends Component {
 	render() {
@@ -19,7 +20,8 @@ export default class Control extends Component {
 			<GaussianBlur />,
 			<LaplacianFilter />,
 			<SobelFilter />,
-			<PerwittFilter />
+			<PerwittFilter />,
+			<HistogramEqualization />
 		];
 		return (
 			<div className="sidebar">
