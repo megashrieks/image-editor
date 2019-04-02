@@ -12,6 +12,23 @@ export class CanvasContextProvider extends Component {
 		},
 		size: 350
 	};
+	componentDidMount() {
+		window.addEventListener("wheel", this.handleCursorSize);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("wheel", this.handleCursorSize);
+	}
+
+	handleCursorSize = e => {
+		this.setState(prev => ({
+			size: Math.max(
+				Math.min(prev.size + 15 * ((e.deltaY < 0) * 2 - 1), 1000),
+				0
+			)
+		}));
+	};
+
 	getDimensions = () => {
 		if (!this.canvas)
 			return {
@@ -90,7 +107,7 @@ export class CanvasContextProvider extends Component {
 	};
 	getOriginalImage = () => {
 		return this.currentImage;
-	}
+	};
 	render() {
 		return (
 			<CanvasContext.Provider

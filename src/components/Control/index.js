@@ -13,27 +13,41 @@ import Contrast from "../Contrast";
 import HistogramEqualization from "../HistogramEqualization";
 
 export default class Control extends Component {
+	state = {
+		open: true
+	};
+	toggleDropdown = () => {
+		this.setState(prevState => ({
+			open: !prevState.open
+		}));
+	};
 	render() {
 		let list = [
-			<ImageUpload />,
-			<ImageReset />,
-			<ImageNegate />,
-			<ImageBlur />,
-			<GaussianBlur />,
-			<LaplacianFilter />,
-			<SobelFilter />,
-			<PerwittFilter />,
-			<Brightness />,
-			<Contrast />,
-			<HistogramEqualization />
+			<ImageReset key={1} />,
+			<ImageNegate key={2} />,
+			<ImageBlur key={3} />,
+			<GaussianBlur key={4} />,
+			<LaplacianFilter key={5} />,
+			<SobelFilter key={6} />,
+			<PerwittFilter key={7} />,
+			<Brightness key={8} />,
+			<Contrast key={9} />,
+			<HistogramEqualization key={10} />
 		];
 		return (
 			<div className="sidebar">
-				{list.map((element, index) => (
-					<div className="list" key={index}>
-						{element}
+				<ImageUpload />
+				<div className="dropdown">
+					<div
+						className="dropdown-label"
+						onClick={this.toggleDropdown}
+					>
+						<i className="fa fa-angle-right" />
 					</div>
-				))}
+					{this.state.open && (
+						<div className="dropdown-content">{list}</div>
+					)}
+				</div>
 			</div>
 		);
 	}
