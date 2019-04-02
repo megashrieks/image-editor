@@ -42,8 +42,8 @@ export default class LaplacianFilter extends Component {
 	render() {
 		return (
 			<div style = {{ lineHeight: "20px" }}>
-                <button value = { 1 } onClick={this.laplacianFilter}>Lapl1</button>
-                <button value = { 2 } onClick={this.laplacianFilter}>Lapl2</button>
+                <button value = { 1 } onClick={this.laplacianFilter}>Laplacian 1</button>
+                <button value = { 2 } onClick={this.laplacianFilter}>Laplacian 2</button>
             </div>
 		)
 	}

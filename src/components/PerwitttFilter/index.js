@@ -13,11 +13,11 @@ export default class PerwittFilter extends Component {
 			<div style = {{ lineHeight: "20px" }}>
                 <EdgeDetection
                     kernel = { this.horizontalKernel }
-                >PerwittH</EdgeDetection>
+                >Prewitt Horizontal</EdgeDetection>
                 
                 <EdgeDetection
                     kernel = { this.verticalKernel }
-                >PerwittV</EdgeDetection>
+                >Prewitt Vertical</EdgeDetection>
             </div>
 		)
 	}

@@ -34,7 +34,7 @@ export default class Brightness extends Component {
 	render() {
 		return (
 			<button onClick={this.increaseBrightness}>
-				increase Brightness
+				Increase Brightness
 			</button>
 		);
 	}

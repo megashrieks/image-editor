@@ -13,11 +13,11 @@ export default class SobelFilter extends Component {
 			<div style = {{ lineHeight: "20px" }}>
                 <EdgeDetection
                     kernel = { this.horizontalKernel }
-                >SobelH</EdgeDetection>
+                >Sobel Horizontal</EdgeDetection>
                 
                 <EdgeDetection
                     kernel = { this.verticalKernel }
-                >SobelV</EdgeDetection>
+                >Sobel Vertical</EdgeDetection>
             </div>
 		)
 	}
