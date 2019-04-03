@@ -17,7 +17,7 @@ import { CanvasContext as Context } from "../context/CanvasContext";
 export default class Control extends Component {
 	static contextType = Context;
 	state = {
-		open: true
+		open: false
 	};
 	toggleDropdown = () => {
 		this.setState(prevState => ({

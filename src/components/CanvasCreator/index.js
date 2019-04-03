@@ -15,18 +15,14 @@ export default class CanvasCreator extends Component {
 		});
 	}
 	changeCursor = ({ pageX, pageY }) => {
+		console.log(Math.max(pageX-this.context.cursor_size,50))
 		this.context.setCursor({
-			x: pageX,
-			y: pageY
+			x: Math.min(Math.max(pageX,50+this.context.cursor_size/2),window.innerWidth - this.context.cursor_size/2),
+			y: Math.min(Math.max(pageY,this.context.cursor_size/2),window.innerHeight - this.context.cursor_size/2)
 		});
 	};
 	render() {
 		let { cursor, cursor_size: size } = this.context;
-		// let left = this.canvasRef.current
-		// 	? this.canvasRef.current.offsetLeft
-		// 	: 0;
-		// let top = this.canvasRef.current ? this.canvasRef.current.offsetTop : 0;
-		// console.log(cursor.x - size / 2, cursor.x, left);
 		return (
 			<div className="canvas-container">
 				<div
