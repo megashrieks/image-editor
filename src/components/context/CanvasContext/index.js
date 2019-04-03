@@ -28,7 +28,18 @@ export class CanvasContextProvider extends Component {
 			)
 		}));
 	};
-
+	getCanvas = () => {
+		
+		if (!this.canvas)
+			return {
+				canvas: null,
+				error: new Error("Canvas Not initialised")
+			};
+		return {
+			canvas: this.canvas,
+			error: null
+		};
+	}
 	getDimensions = () => {
 		if (!this.canvas)
 			return {
@@ -120,7 +131,8 @@ export class CanvasContextProvider extends Component {
 					cursor: this.state.cursor,
 					cursor_size: this.state.size,
 					setCursor: this.setCursor,
-					getCursor: this.getCursor
+					getCursor: this.getCursor,
+					getCanvas:this.getCanvas
 				}}
 			>
 				{this.props.children}
